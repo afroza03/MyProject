@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body style="background:#ccffff">
+           <h:panelGrid columns="4" style="border: none">
+           <h:graphicImage value="/assets/mph-logo-3d_1.png"/> 
+           
+              <h:graphicImage value="/assets/images (10).jpg"/>  
+              <h:graphicImage value="/assets/images (11).jpg"/>  
+           <h:graphicImage value="/assets/s1 .jpg"/>   
+        </h:panelGrid> 
+        
+        <p:panelGrid columns="1">
+        <h>You Have Search For Your Check-In And Check-Out:Your Search Result Is:</h>
+        <h:form>
+            <h:outputLabel value="Search Result :"></h:outputLabel>
+            <h:inputText value=" =6 rooms for choose"/>
+            
+            <h:commandButton value="Ok" action="#"/>
+        </h:form></p:panelGrid><br></br><br></br><br></br>
+        <center>
+                      <h:form style="color:#ff9933;font-family: Times New Roman;">
+                      
+             <p:panelGrid columns="2" >
+                
+         <f:facet name="header" >
+        <h3 style="font-family: Times New Roman; font-weight: bold;text-align: center">Booking Your Room</h3>
+    </f:facet>
+                     <h:outputLabel value="Destination :" style="color:#ff9933;font-family: Times New Roman;"/>
+                     <p:autoComplete  value="#{booking.destination}" completeMethod="#{booking.complete}"/>
+                     <h:outputLabel value="Your Name :" style="color:#ff9933;font-family: Times New Roman;"/>
+                     <p:inputText  value="#{bk.customer_name}" />
+                      <h:outputLabel value="Room Type :" style="color:#ff9933;font-family: Times New Roman;"/>
+                      <p:inputText  value="#{bk.roomtype}" />
+                      <h:outputLabel value="Total Room :" style="color:#ff9933;font-family: Times New Roman;"/>
+                      <p:inputText  value="#{bk.totalroom}" />
+                    
+                     <h:outputLabel value="Check-In :" style="color:#ff9933;font-family: Times New Roman;"/>
+                     <p:calendar value="#{bk.check_in}"/>
+                     <h:outputLabel value="Check-Out :" style="color:#ff9933;font-family: Times New Roman;"/>
+                     <p:calendar value="#{bk.check_out}"/>
+                     <h:outputLabel value="Adult :" style="color:#ff9933;font-family: Times New Roman;"/>
+                     <p:autoComplete  value="#{bk.person}" completeMethod="#{booking.Aucomplete}"/>
+                     <h:outputLabel value="Children :" style="color:#ff9933;font-family: Times New Roman;"/>
+                     <p:inputText value="#{bk.other}"/>
+                      <h:outputLabel value="Price :" style="color:#ff9933;font-family: Times New Roman;"/>
+                      <p:inputText  value="#{bk.price}" />
+                    <f:facet name="footer">   
+                        <h:commandButton value="Confirmed Book"  class="btn btn-danger" action="#{b.suc()}"  >    
+               </h:commandButton> 
+                   
+                        
+
+                    </f:facet>
+               </p:panelGrid>
+      </h:form></center>
+    </h:body>
+</html>
+

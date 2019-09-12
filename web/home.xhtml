@@ -1,0 +1,388 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view>
+    <h:head>
+        <title>Facelet Title</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </h:head>
+      <h:body style="background-color:#ccffff">
+          <div class="container-fluid">
+            	
+<h:form >  
+    <p:growl id="messages"/>
+ 
+    <p:menubar style="background-color:#ccffff">
+        <p:submenu label="Home" >
+            <p:submenu label="Manager" icon="pi pi-briefcase">
+                <p:menuitem value="SignIn" url="faces/adminSign.xhtml" />
+                <p:menuitem value="SignUp" url="#" />
+            </p:submenu>
+            <p:menuitem value="Open" url="#" />
+            <p:separator />
+            <p:menuitem value="Quit" url="#" />
+        </p:submenu>
+ 
+        <p:submenu label="Hotel" icon="pi pi-pencil">
+            <p:menuitem value="5 Star" url="faces/hotelDetailPicture.xhtml" icon="pi pi-angle-double-left" />
+            <p:menuitem value="3 Star" url="#" icon="pi pi-angle-double-right" />
+        </p:submenu>
+ 
+        <p:submenu label="Room" icon="pi pi-question">
+            <p:menuitem value="Double Room" url="#" />
+               <p:menuitem value="Single Room" url="#" />
+                  <p:menuitem value="Children Room" url="#" />
+            <p:submenu label="Search" icon="pi pi-search">
+                <p:submenu label="Hall">
+                    <p:menuitem value="Party Ground" url="#" />
+                      <p:menuitem value="Baby Play Ground" url="#" />
+                </p:submenu>
+           
+            </p:submenu>
+        </p:submenu>
+        <p:submenu label="Reservation" icon="pi pi-cog">
+            <p:menuitem value="Room Reservation" url="faces/reservation.xhtml" icon="pi pi-angle-double-left" />
+        </p:submenu>
+         <p:submenu label="Rent Turist Car" icon="pi pi-cog">
+            <p:menuitem value="Car Rent" url="faces/newjsf.xhtml" icon="pi pi-angle-double-left" />
+        </p:submenu>
+        <p:submenu label="Service" icon="pi pi-cog">
+            <p:submenu label="Tourist Guid" icon="pi pi-refresh"></p:submenu>
+            <p:submenu label="Car Services" icon="pi pi-refresh"></p:submenu>
+            <p:submenu label="Medical" icon="pi pi-refresh">
+                <p:menuitem value="Normal Check up" action="#" icon="pi pi-save" update="messages"/>
+                <p:menuitem value="Ambulance" action="#" icon="pi pi-refresh" update="messages"/>
+            </p:submenu>
+            <p:submenu label="Discount" icon="pi pi-clone">
+                <p:menuitem value="Delete" action="#" icon="pi pi-times" update="messages" ajax="false"/>
+            </p:submenu>
+        </p:submenu>
+ 
+        <p:menuitem value="Help" url="http://www.primefaces.org" icon="pi pi-times" />
+ 
+        <f:facet name="options">
+            <p:inputText style="margin:1px 10px 1px 1px;" placeholder="Search"/>
+            <p:commandButton  value="Search" action="welcomePrimefaces" icon="pi pi-home" />
+        </f:facet>
+    </p:menubar>
+</h:form>
+<h:form >
+    <p:graphicImage value="/assets/mph-logo-3d.png" class="rounded-circle"/>
+  <p:clock pattern="HH:mm:ss dd.MM.yyyy" mode="server" />
+  </h:form>
+     
+<!-- start boot-->
+
+
+<div class="row" style="height: 50%">
+  
+<div class="col-sm-12">
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <p:graphicImage value="/assets/sea_1.jpg"  style="width: 100%;height: 20%"/>
+      <div class="carousel-caption">
+	   <h1 style="color:blue;font-weight: bold" >Live The Wonderous Life</h1>
+           <h:form>       
+<h:commandButton value="BOOK NOW" action="#{b.book()}" class="btn btn-warning" style="font-weight: bold;color: #990000;font-family: Times New Roman;"></h:commandButton></h:form> 
+	   </div>
+     </div>
+    <div class="carousel-item">
+        <p:graphicImage value="/assets/4682_2.jpg"  style="width: 100%;height: 2%"/>
+    <div class="carousel-caption">
+	   <h1 style="color:blue;font-weight: bold">Live The Wonderous Life</h1>
+	 <h:form>       
+<h:commandButton value="BOOK NOW" action="#{b.book()}" class="btn btn-warning" style="font-weight: bold;color: #990000;font-family: Times New Roman;"></h:commandButton></h:form> 
+	   </div>
+	</div>
+    <div class="carousel-item">
+        <p:graphicImage value="/assets/cro.jpg"  style="width: 100%;height: 10%"/>
+       <div class="carousel-caption">
+	   <h1 style="color:blue">Live The Wonderous Life</h1>
+	   <h:form>       
+<h:commandButton value="BOOK NOW" action="#{b.book()}" class="btn btn-warning" style="font-weight: bold;color: #990000;font-family: Times New Roman;"></h:commandButton></h:form> 
+	   </div>
+   </div>
+    <div class="carousel-item">
+        <p:graphicImage value="/assets/237328 - Copy.jpg"  style="width: 100%;height: 10%"/>
+       <div class="carousel-caption">
+	   <h1 style="color:blue">Live The Wonderous Life</h1>
+	 <h:form>       
+<h:commandButton value="BOOK NOW" action="#{b.book()}" class="btn btn-warning" style="font-weight: bold;color: #990000;font-family: Times New Roman;"></h:commandButton></h:form> 
+	   </div>
+   </div>
+  
+  </div>
+  
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div><br></br>
+</div></div><br></br><br></br><hr ></hr>
+<!--stop boot-->
+ <div class="row">
+ <div class="col-sm-2">
+ </div>
+<div class="col-sm-8">
+<h3 class="text-center text-warning" style="font-family: Times New Roman;">Welcome To</h3>
+ <h1 class="display-4 text-center" style=" font-family: Times New Roman;" >MILLS PARK RESORT</h1>
+ <p class="text-center" style=" font-family: Times New Roman;">Lorem Khaled Ipsum is a major key to success. Bless up.</p><p> The weather is amazing, walk with me through the pathway of more success. Take this journey with me, Lion! Let me be clear, you have to make it through the jungle to make it to paradise, that’s the key, Lion! Wraith talk. They key is to have every key, the key to open every door. Put it this way, it took me twenty five years to get these plants, twenty five years of blood sweat,</p> <p class="text-center">and I’m never giving up, I’m just getting started.</p>
+
+<p class="text-center"><strong>Victor Henderson - Manager</strong></p><br></br> <div class="progress">
+    <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" style="width:100%"></div>
+  </div><br></br><br></br>
+<div class="row">
+ <div class="col-sm-4">  
+ <div class="card bg-secondary text-white" style="width:250px; height:150px;">
+     <div class="card-body"><p style=" font-family: Times New Roman; font-size:25px;" ><strong>CHECK-IN</strong></p><hr color="white"/><p style=" font-family: Times New Roman; font-size:20px"><h:form><p:calendar/></h:form></p></div></div></div>
+ <div class="col-sm-4">
+ <div class="card bg-secondary text-white" style="width:250px; height:150px;">
+  <div class="card-body"><p style=" font-family: Times New Roman; font-size:25px" ><strong>CHECK-OUT</strong></p><hr color="white"/><p style=" font-family: Times New Roman; font-size:20px" ><h:form><p:calendar/></h:form></p></div></div></div>
+  <div class="col-sm-4">
+  <div class="card bg-secondary text-white" style="width:250px; height:150px;">
+  <div class="card-body"><p style=" font-family: Times New Roman; font-size:25px" ><strong>AVAILABILITY</strong></p><hr color="white"/><p style=" font-family: Times New Roman; font-size:20px"><h:form><p:calendar/></h:form></p></div></div></div>
+ </div><br></br>
+ </div>
+
+ <div class="col-sm-2">
+ </div>
+ </div>
+ 
+<br></br><br></br><br></br><hr ></hr>
+ <div class="row">
+     <div class="col-sm-2"></div>  <div class="col-sm-8">
+
+<h3 class="text-center text-warning" style="font-family: Times New Roman;">Welcome To</h3>
+ <h1 class="display-4 text-center" style=" font-family: Times New Roman;" >OUR SERVICES</h1>
+ <p class="text-center" style=" font-family: Times New Roman;">Lorem Khaled Ipsum is a major key to success. Bless up.</p><p> The weather is amazing, walk with me through the pathway of more success. Take this journey with me, Lion! Let me be clear, you have to make it through the jungle to make it to paradise, that’s the key, Lion! Wraith talk. They key is to have every key, the key to open every door. Put it this way, it took me twenty five years to get these plants, twenty five years of blood sweat,</p> <p class="text-center">and I’m never giving up, I’m just getting started.</p>
+ 
+     </div>  <div class="col-sm-2"></div></div>
+<br></br><h:form>
+<h:panelGrid columns="3" cellpadding="2">
+  <p:panelGrid columns="1">  
+
+
+      <p:graphicImage value="/assets/spa.jpg" />
+   <f:facet name="footer" >
+        <h3 style="font-family: Times New Roman; font-weight: bold;text-align: center">SPA</h3>
+    </f:facet>
+  </p:panelGrid>
+ <p:panelGrid columns="2"> 
+
+    <p:graphicImage value="/assets/TLLPR_DIN_18.jpg"/>
+    <f:facet name="footer" >
+        <h3 style="font-family: Times New Roman; font-weight: bold;text-align: center">RESTUARENT</h3>
+    </f:facet>
+    
+
+
+ </p:panelGrid>
+ <p:panelGrid columns="3"> 
+
+   <p:graphicImage value="/assets/gym.jpg"/>
+ <f:facet name="footer" >
+        <h3 style="font-family: Times New Roman; font-weight: bold;text-align: center">GYM</h3>
+    </f:facet>
+</p:panelGrid>
+
+</h:panelGrid>
+</h:form>
+<br></br><br></br><br></br><hr ></hr>
+
+<div class="row">
+<div class="col-sm-1"></div>
+<div class="col-sm-10">
+ <h4 class="text-center text-warning" style="font-family: Times New Roman;">Welcome To</h4>
+ <a href="#" target="_self"><h1 class="display-4 text-center" style=" font-family: Times New Roman; color: black">HAPPY SHOPPING</h1></a>
+ <p class="text-center" style=" font-family: Times New Roman;">Lorem Khaled Ipsum is a major key to success. Bless up.</p><p> The weather is amazing, walk with me through the pathway of more success. Take this journey with me, Lion! Let me be clear, you have to make it through the jungle to make it to paradise, that’s the key, Lion! Wraith talk. They key is to have every key, the key to open every door. Put it this way, it took me twenty five years to get these plants, twenty five years of blood sweat, </p><p class="text-center">and I’m never giving up, I’m just getting started.</p><br></br>
+</div><div class="col-sm-1"></div></div>
+<h:form>
+  <p:accordionPanel>
+        <p:tab title="FOOD MENU">
+            <h:panelGrid columns="2" cellpadding="20">
+                <p:graphicImage value="/assets/download (5).jpg"/>
+               
+                <ol style="font-family: Times New Roman; color:blue; font-size:18px"><li>BENGALI FOOD ITEMS</li><li>THAI FOOD ITEMS</li><li>CHAINES FOOD ITEMS</li><li>ITALIAN FOOD ITEMS</li></ol>
+               <p style=" font-family: Times New Roman;  color:blue; font-size:18px;">There are so many food items in our food menu,you can chooice your faviorate menu and we can assure you that our foods are so dilicious and you will like it.</p>
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="NEAR BY MARKET">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage value="/assets/sho.jpg"/>
+                <p style="font-family: Times New Roman; color:blue; font-size:18px">Many famous shopping-at-market-place-in Cox's Bazar,Many famous shopping-at-market-place-in Cox's BazarMany famous shopping-at-market-place-in Cox's Bazar</p>
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="ANTIC SHOP">
+            <h:panelGrid columns="2" cellpadding="2">
+                <p:graphicImage value="/assets/antic.jpg" />
+               
+<p style="font-family: Times New Roman; color:blue; font-size:18px">Many famous shopping-at-market-place-in Cox's Bazar,Many famous shopping-at-market-place-in Cox's BazarMany famous shopping-at-market-place-in Cox's Bazar</p>
+            </h:panelGrid>
+        </p:tab>
+    </p:accordionPanel>
+</h:form><br></br><br></br><br></br><hr ></hr>
+<h4 class="text-center text-warning" style="font-family: Times New Roman;">TESTIMONIAL</h4>
+ <h1 class="display-6 text-center" style=" font-family: Times New Roman;" >CUSTOMER SATISFACTION</h1>
+
+  <div class="container mt-3">
+  <div class="media border p-3">
+     <p:graphicImage value="/assets/testimonial1.png" class="mr-3 mt-3 rounded-circle" style="width:60px" />
+    <div class="media-body">
+      <h4>MD.Sohel rana,,<small><i>Posted on January 05, 2019</i></small></h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="media p-3">
+          <p:graphicImage value="/assets/img_avatar2.png" class="mr-3 mt-3 rounded-circle" style="width:60px" />
+        <div class="media-body">
+          <h4>Afroza alam,,<small><i>Posted on January 20 2019</i></small></h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        	<h4>Leave a Comment:</h4>
+      <form role="form">
+        <div class="form-group">
+          <textarea class="form-control" rows="3" ></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form></div>
+	
+      </div>  
+    </div>
+	
+  </div>
+</div><br></br><br></br><br></br><hr></hr>
+<!--footer-->
+<div class="spinner-grow text-muted"></div>
+<div class="spinner-grow text-primary"></div>
+<div class="spinner-grow text-success"></div>
+<div class="spinner-grow text-info"></div>
+<div class="spinner-grow text-warning"></div>
+<div class="spinner-grow text-danger"></div>
+<div class="spinner-grow text-secondary"></div>
+<div class="spinner-grow text-dark"></div>
+<div class="spinner-grow text-light"></div><div class="spinner-grow text-muted"></div>
+<div class="spinner-grow text-primary"></div>
+<div class="spinner-grow text-success"></div>
+<div class="spinner-grow text-info"></div>
+<div class="spinner-grow text-warning"></div>
+<div class="spinner-grow text-danger"></div>
+<div class="spinner-grow text-secondary"></div>
+<div class="spinner-grow text-dark"></div>
+<div class="spinner-grow text-light"></div><div class="spinner-grow text-muted"></div>
+<div class="spinner-grow text-primary"></div>
+<div class="spinner-grow text-success"></div>
+<div class="spinner-grow text-info"></div>
+<div class="spinner-grow text-warning"></div>
+<div class="spinner-grow text-danger"></div>
+<div class="spinner-grow text-secondary"></div>
+<div class="spinner-grow text-dark"></div>
+<div class="spinner-grow text-light"></div><div class="spinner-grow text-muted"></div>
+<div class="spinner-grow text-primary"></div>
+<div class="spinner-grow text-success"></div>
+<div class="spinner-grow text-info"></div>
+<div class="spinner-grow text-warning"></div>
+<div class="spinner-grow text-danger"></div>
+<div class="spinner-grow text-secondary"></div>
+<div class="spinner-grow text-dark"></div>
+<div class="spinner-grow text-success"></div>
+
+
+
+
+
+<div class="row bg-dark gray">
+<div class="col-sm-2"></div>
+<div class="col-sm-8">
+<div class=" container text-light">
+<table style="width:100%; height:80%;" class="text-light text-center">
+<tr class="text-light text-left">
+<th rowspan="2"> <p:graphicImage value="/assets/mph-logo-3d.png" class="rounded-circle"/></th>
+<th>COMPANY</th>
+<th>SERVICES</th>
+<th class="text-light text-center">SING UP FOR NEWLETTER</th>
+</tr>
+<tr class="text-left">
+<td>>Home</td>
+<td>>Spa</td>
+<td class="text-center">>Log in</td>
+</tr>
+<tr>
+<td class="text-left">(+233) 123 456789</td>
+<td class="text-left">>About Us</td>
+<td class="text-left">>Rooms </td>
+</tr>
+<tr >
+<td class="text-left" >Contact@mills.com</td>
+<td class="text-left">>Testimonial</td>
+<td class="text-left">>Restaurant</td>
+<td class="text-center"><input type="text" placeholder="Log-In"/></td>
+</tr>
+<tr class="text-left">
+<td></td>
+<td>>Blog</td>
+<td>>Gym</td>
+<td></td>
+</tr>
+
+
+
+
+
+
+
+</table>
+<br/><div class="row container">
+<div class="col-sm-9">
+<i class="material-icons">cloud</i>
+<i class="material-icons">favorite</i>
+<i class="material-icons">attachment</i>
+<i class="material-icons">computer</i>
+<i class="material-icons">traffic</i>
+</div>
+<div class="col-sm-3">
+ <p:graphicImage value="/assets/travel-and-tour-logo-template-templates-creative-market-comfortable-tours-travels-design-extraordinay-3.jpg"/> 
+</div>
+
+</div>
+<br></br>
+        <hr color="white"></hr>
+<div class="row">
+<div class="col-sm-7">
+<p>Mills Park  Hotel  Resort PSD</p> 
+</div>
+<div class="col-sm-5">
+<p>Term  Condition  Privacy Policy  Site Map</p> 
+</div>
+</div>
+<div class="col-sm-2"></div>
+
+</div>
+
+
+
+
+
+</div>
+
+</div>
+
+
+
+      </div>
+    </h:body></f:view>
+</html>
+

@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+  <h:head>
+        <title>Facelet Title</title>
+                <style type="text/css">
+     
+     
+.banner-image{
+    background-image: url("https://wallpapers.ae/wp-content/uploads/2016/02/Luxury-resort-wide-hd-new-wallpaper.jpg");
+    height:100%;
+    width: 100%;
+    background-size: cover;
+}
+        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    </h:head>
+    <h:body style="background:#ccffff">
+        <h:form >  
+    <p:growl id="messages"/>
+ 
+    <p:menubar style="background-color:#ccffff">
+        <p:submenu label="Home" icon="pi pi-file">
+            <p:submenu label="Admin" icon="pi pi-briefcase">
+                <p:menuitem value="SignIn" url="faces/index_1.xhtml" />
+                <p:menuitem value="SignUp" url="#" />
+            </p:submenu></p:submenu>
+ 
+        <p:submenu label="Hotel" icon="pi pi-pencil">
+            <p:menuitem value="5 Star" url="#" icon="pi pi-angle-double-left" />
+            <p:menuitem value="3 Star" url="#" icon="pi pi-angle-double-right" />
+        </p:submenu>
+ 
+        <p:submenu label="Room" icon="pi pi-question">
+            <p:menuitem value="Double Room" url="#" />
+               <p:menuitem value="Single Room" url="#" />
+                  <p:menuitem value="Children Room" url="#" />
+       
+        </p:submenu>
+ 
+        <p:submenu label="Service" icon="pi pi-cog">
+            <p:submenu label="Tourist Guid" icon="pi pi-refresh"></p:submenu>
+            <p:submenu label="Car Services" icon="pi pi-refresh"></p:submenu>
+       
+            <p:submenu label="Discount" icon="pi pi-clone">
+                <p:menuitem value="Delete" action="#" icon="pi pi-times" update="messages" ajax="false"/>
+            </p:submenu>
+        </p:submenu>
+ 
+        <p:menuitem value="Help" url="http://www.primefaces.org" icon="pi pi-times" />
+ 
+        <f:facet name="options">
+            <p:inputText style="margin:1px 10px 1px 1px;" placeholder="Search"/>
+            <p:commandButton  value="Search" action="welcomePrimefaces" icon="pi pi-home" />
+        </f:facet>
+    </p:menubar>
+</h:form><br></br>
+<h:form >
+  <p:clock pattern="HH:mm:ss dd.MM.yyyy" mode="server" />
+  </h:form>
+         <br></br><br></br>
+ 
+  
+         
+         <h:form>
+             <p:tabView>
+           <p:tab title="ADD HOTEL ROOM">
+            <h:panelGrid columns="8" cellpadding="10">
+                <h:form> 
+                    <h:panelGrid columns="2" cellpadding="5">  
+                <h:outputLabel for="rid" value="Room Id :"/>
+                    <p:inputText id="rid" placeholder="room no"/>
+                    <h:outputLabel for="rt" value="Room Type :"/>
+                    <p:inputText id="rt" placeholder="single or double"/>
+                    <h:outputLabel for="rc" value="Capacity :"/>
+         <p:selectOneMenu id="console" value="#{addroom.capasity}" style="width:180px">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="1+1" itemValue=" One" />
+            <f:selectItem itemLabel="2+2" itemValue="two" />
+            <f:selectItem itemLabel="1+2" itemValue="three" />
+        </p:selectOneMenu>
+                    <h:outputLabel for="pc" value="Price"/>
+                    <p:inputText id="pc" placeholder="1000-10000"/>
+                     <p:commandButton value="Save" />
+                     <p:commandButton value="Reset"/>  </h:panelGrid ></h:form>
+                            <p:graphicImage value="/assets/s.jpg" />
+                         <p:graphicImage value="/assets/s1 .jpg" />
+                            <p:graphicImage value="/assets/s2.jpg" />
+               </h:panelGrid>
+   
+           
+          
+        </p:tab>
+        <p:tab title="ADD HALL ROOM">
+               <h:panelGrid columns="8" cellpadding="10">
+                <h:form> 
+                    <h:panelGrid columns="2" cellpadding="5">  
+                <h:outputLabel for="rid" value="Room Id :"/>
+                    <p:inputText id="rid" placeholder="room no"/>
+                    <h:outputLabel for="rt" value="Room Type :"/>
+                    <p:inputText id="rt" placeholder="single or double"/>
+                    <h:outputLabel for="rc" value="Capacity :"/>
+         <p:selectOneMenu id="console" value="#{addroom.capasity}" style="width:180px">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="500+" itemValue=" One" />
+            <f:selectItem itemLabel="1000+" itemValue="two" />
+            <f:selectItem itemLabel="3000+" itemValue="three" />
+        </p:selectOneMenu>
+                    <h:outputLabel for="pc" value="Price"/>
+                    <p:inputText id="pc" placeholder="1000-10000"/>
+                     <p:commandButton value="Save" />
+                     <p:commandButton value="Reset"/>  </h:panelGrid ></h:form>
+                            <p:graphicImage value="/assets/h.jpg" />
+                         <p:graphicImage value="/assets/h1.jpg" />
+                            <p:graphicImage value="/assets/h2.jpg" />
+               </h:panelGrid>
+        </p:tab>
+        <p:tab title="ADD CHILDREN ROOM">
+               <h:panelGrid columns="8" cellpadding="10">
+                <h:form> 
+                    <h:panelGrid columns="2" cellpadding="5">  
+                <h:outputLabel for="rid" value="Room Id :"/>
+                    <p:inputText id="rid" placeholder="room no"/>
+                    <h:outputLabel for="rt" value="Room Type :"/>
+                    <p:inputText id="rt" placeholder="single or double"/>
+                    <h:outputLabel for="rc" value="Capacity :"/>
+         <p:selectOneMenu id="console" value="#{addroom.capasity}" style="width:180px">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="1+1" itemValue=" One" />
+            <f:selectItem itemLabel="2+2" itemValue="two" />
+            <f:selectItem itemLabel="1+2" itemValue="three" />
+        </p:selectOneMenu>
+                    <h:outputLabel for="pc" value="Price"/>
+                    <p:inputText id="pc" placeholder="1000-10000"/>
+                     <p:commandButton value="Save" />
+                     <p:commandButton value="Reset"/>  </h:panelGrid ></h:form>
+                            <p:graphicImage value="/assets/c.jpg" />
+                         <p:graphicImage value="/assets/c1.jpg" />
+                            <p:graphicImage value="/assets/c2.jpg" />
+               </h:panelGrid>
+        </p:tab>
+    </p:tabView>
+             
+         </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Reservation</title>          
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </h:head>
+    <h:body>
+    <p:breadCrumb>
+        <p:menuitem value="Categories" url="#" />
+    <p:menuitem value="Booking" url="#" />
+    <p:menuitem value="Single Room" url="#" />
+    <p:menuitem value="Double room" url="#" />
+    <p:menuitem value="Hall Room" url="#" />
+    <p:menuitem value="Party Center" url="#" />
+ 
+</p:breadCrumb>
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+         
+        <h:panelGrid columns="4" style="border: none">
+           <h:graphicImage value="/assets/mph-logo-3d_1.png"/> 
+           
+              <h:graphicImage value="/assets/images (10).jpg"/>  
+              <h:graphicImage value="/assets/images (11).jpg"/>  
+           <h:graphicImage value="/assets/s1 .jpg"/>   
+        </h:panelGrid> 
+        <br></br>
+        <div class="progress">
+            <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" style="width:100%; height:40%"></div></div>
+            <br></br> <br></br>
+       <div class="row">
+           <div class="col-sm-4">   
+               <p:panelGrid columns="1" >
+         <f:facet name="header" >
+        <h3 style="font-family: Times New Roman; font-weight: bold;text-align: center">MILLS PARK RESORT</h3>
+    </f:facet>
+         
+                   <p style="color:#ff9933;font-family: Times New Roman;"> <b>Call:</b> +88 09610 777 888</p>
+
+                   <p style="color:#ff9933;font-family: Times New Roman;"><b>Hotline:</b> 01755691917</p>
+
+                   <p style="color:#ff9933;font-family: Times New Roman;"><b>email:</b> vacation@sayemanresort.com</p>
+
+               <p style="color:#ff9933;font-family: Times New Roman;">Sayeman Beach Resort, Marine Drive Road, Kolatali, Cox's Bazar, Bangladesh</p>
+         
+               </p:panelGrid><br></br><br></br>
+              <h:form style="color:#ff9933;font-family: Times New Roman;">
+             <p:panelGrid columns="2" >
+                
+         <f:facet name="header" >
+        <h3 style="font-family: Times New Roman; font-weight: bold;text-align: center">Search Booking</h3>
+    </f:facet>
+                     <h:outputLabel value="Destination :" style="color:#ff9933;font-family: Times New Roman;"/>
+                     <p:autoComplete  value="#{booking.destination}" completeMethod="#{booking.complete}"/>
+                     <h:outputLabel value="Check-In :" style="color:#ff9933;font-family: Times New Roman;"/>
+                     <p:calendar value="#{booking.check_in}"/>
+                     <h:outputLabel value="Check-Out :" style="color:#ff9933;font-family: Times New Roman;"/>
+                     <p:calendar value="#{booking.check_out}"/>
+                     <h:outputLabel value="Adult :" style="color:#ff9933;font-family: Times New Roman;"/>
+                     <p:autoComplete  value="#{booking.person}" completeMethod="#{booking.Aucomplete}"/>
+                     <h:outputLabel value="Children :" style="color:#ff9933;font-family: Times New Roman;"/>
+                     <p:inputText value="#{booking.child}"/>
+                    <f:facet name="footer">   
+                        <h:commandButton value="Search" action="#{booking.page()}" class="btn btn-danger" style="font-weight: bold;color:#ffffff;font-family: Times New Roman;"></h:commandButton>    
+                  </f:facet>
+               </p:panelGrid>
+      </h:form>
+ 
+  
+    </div>
+    <div class="col-sm-8"> 
+ <p:breadCrumb>
+        <p:menuitem value="Categories" url="#" />
+        <p:menuitem value="" url="#" />
+    <p:menuitem value="Select Room" url="#" />
+     <p:menuitem value="" url="#" />
+    <p:menuitem value="Guest Details" url="#" />
+     <p:menuitem value="" url="#" />
+    <p:menuitem value="Review" url="#" />
+ </p:breadCrumb> 
+ 
+<h:form id="form">
+  
+        <h:panelGrid columns="3" cellpadding="10" >
+        
+                  <p:graphicImage value="/assets/s.jpg"/> 
+           
+ 
+       
+                <h:panelGrid columns="1" cellpadding="10">
+              
+                    <h:outputText value="Best Quality*****" style="font-weight: bold;color:#ff9933;font-family: Times New Roman;" />
+                    <h:outputText value="Luxarious Room!!!!" style="font-weight: bold;color: #ff9933;font-family: Times New Roman;"/>
+                    <h:outputText value="Price: BDT:2000 (One Night)" style="font-weight: bold;color: #ff9933;font-family: Times New Roman;"/> <p:rating   />
+                </h:panelGrid>
+                  <h:panelGrid columns="1"><h:commandButton value="Book Now" action="#" class="btn btn-warning" style="font-weight: bold;color: #990000;font-family: Times New Roman;"></h:commandButton></h:panelGrid>
+        </h:panelGrid>
+        <hr />
+        <h:panelGrid columns="3" cellpadding="15" >
+        
+                  <p:graphicImage value="/assets/s1 .jpg"/> 
+           
+ 
+       
+                <h:panelGrid columns="1" cellpadding="10">
+              
+                    <h:outputText value="Best Quality*****" style="font-weight: bold;color:#ff9933;font-family: Times New Roman;" />
+                    <h:outputText value="Luxarious Room!!!!" style="font-weight: bold;color: #ff9933;font-family: Times New Roman;"/>
+                    <h:outputText value="Price: BDT:2000 (One Night)" style="font-weight: bold;color: #ff9933;font-family: Times New Roman;"/> <p:rating   />
+                </h:panelGrid>
+                  <h:panelGrid columns="1"><h:commandButton value="Book Now" action="#" class="btn btn-warning" style="font-weight: bold;color: #990000;font-family: Times New Roman;"></h:commandButton></h:panelGrid>
+        </h:panelGrid>
+     <hr />
+     <h:panelGrid columns="3" cellpadding="18" >
+        
+                  <p:graphicImage value="/assets/s2.jpg"/> 
+           
+ 
+       
+                <h:panelGrid columns="1" cellpadding="10">
+              
+                    <h:outputText value="Best Quality*****" style="font-weight: bold;color:#ff9933;font-family: Times New Roman;" />
+                    <h:outputText value="Luxarious Room!!!!" style="font-weight: bold;color: #ff9933;font-family: Times New Roman;"/>
+                    <h:outputText value="Price: BDT:2000 (One Night)" style="font-weight: bold;color: #ff9933;font-family: Times New Roman;"/> <p:rating   />
+                </h:panelGrid>
+                  <h:panelGrid columns="1"><h:commandButton value="Book Now" action="#" class="btn btn-warning" style="font-weight: bold;color: #990000;font-family: Times New Roman;"></h:commandButton></h:panelGrid>
+        </h:panelGrid>
+     <hr />
+</h:form>
+        
+    </div>
+     </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </div>
+    <div class="col-sm-1"></div>        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+ </div>
+    </h:body>
+</html>
+
