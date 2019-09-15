@@ -17,12 +17,12 @@
     text-align: center;
     border: 1px solid #fafafa;
 }
-/*body{
-    background-image: url("resource/images/UZlSakf.jpg");
-    height:100%;
-    width: 100%;
-    background-size: cover;
-}*/
+   .banner-image{
+          background-image: url("https://s23040.pcdn.co/wp-content/images/resorts/common/cms/mvc/images/resorts/galleries/WAIKOLOA/4x3Gallery/0-PRO-WK-P-001_ExteriorDusk.jpg");
+          width: 100%;
+         background-repeat: no-repeat;
+         background-size: cover;
+      }
         </style>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
  
@@ -30,34 +30,34 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </h:head>
      <f:view>
-    <h:body>
-        <h:graphicImage value="/assets/UZlSakf.jpg"/>
-
+    <h:body class="banner-image">
       
+
+
       
       <h:form>
     
  
   
-    <p:tabView>
-        <p:tab title="Admin SignIn">
+          <p:tabView >
+        <p:tab title="Admin SignIn"  >
             
               
             <h:panelGrid columns="2"  >
                
-                     <f:facet name="header" class="align-center">A D M I N</f:facet>
-                     <p:separator style="width:50px"/> <p:separator style="width:50px"/>
+                    
+                 
                
                 <h:outputLabel for="ue" value="Email"/>
                 <p:inputText id="ue" value="" placeholder="Enter Email" label="ue"/>
             
                 <h:outputLabel for="pas" value="Password"/>
                 <p:password id="pass" value="" placeholder="Enter password" label="pass"/>
-                <p:separator style="width:50px"/>
-                <f:facet name="footer">
+               
+         
                 <p:button value="SignIn" icon="ui-icon-check" outcome="addingRoom" />
                 <p:button   value="Reset" icon="pi pi-star" ></p:button>
-                </f:facet>
+            
             </h:panelGrid>
         </p:tab>
         <p:tab title="Sign Up">
@@ -71,11 +71,11 @@
                 <p:password id="passw" value="" placeholder="Enter password" label="passw"/>
                 
                 
-                 <f:facet name="footer">
+              
    
         <p:button value="SignIn" icon="ui-icon-check"  />
                 <p:button   value="Reset" icon="pi pi-star" ></p:button>
-  </f:facet>
+
 
 
             </h:panelGrid>

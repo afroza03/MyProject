@@ -6,28 +6,37 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Facelet Title</title>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+      .banner-image{
+          background-image: url("https://s23040.pcdn.co/wp-content/images/resorts/common/cms/mvc/images/resorts/galleries/WAIKOLOA/4x3Gallery/0-PRO-WK-P-001_ExteriorDusk.jpg");
+          width: 100%;
+         background-repeat: no-repeat;
+         background-size: cover;
+      }
+  </style>
     </h:head>
-    <h:body style="background:#ccffff">
-           <h:panelGrid columns="4" style="border: none">
-           <h:graphicImage value="/assets/mph-logo-3d_1.png"/> 
-           
-              <h:graphicImage value="/assets/images (10).jpg"/>  
-              <h:graphicImage value="/assets/images (11).jpg"/>  
-           <h:graphicImage value="/assets/s1 .jpg"/>   
-        </h:panelGrid> 
+    <h:body class="banner-image">
+<!--        <div class="row">
+            <div class="col-sm-1"></div>
+     <div class="col-sm-10">
+           <h:graphicImage value="/assets/Screenshot (23).png"/> </div>
+            <div class="col-sm-1"></div>
+                 
+        </div> -->
+
+       
         
-        <p:panelGrid columns="1">
-        <h>You Have Search For Your Check-In And Check-Out:Your Search Result Is:</h>
-        <h:form>
-            <h:outputLabel value="Search Result :"></h:outputLabel>
-            <h:inputText value=" =6 rooms for choose"/>
-            
-            <h:commandButton value="Ok" action="#"/>
-        </h:form></p:panelGrid><br></br><br></br><br></br>
-        <center>
+ 
+      <br></br><br></br><br></br>
+   
+      <center>
                       <h:form style="color:#ff9933;font-family: Times New Roman;">
                       
-             <p:panelGrid columns="2" >
+             <p:panelGrid columns="4" >
                 
          <f:facet name="header" >
         <h3 style="font-family: Times New Roman; font-weight: bold;text-align: center">Booking Your Room</h3>
@@ -49,17 +58,19 @@
                      <p:autoComplete  value="#{bk.person}" completeMethod="#{booking.Aucomplete}"/>
                      <h:outputLabel value="Children :" style="color:#ff9933;font-family: Times New Roman;"/>
                      <p:inputText value="#{bk.other}"/>
-                      <h:outputLabel value="Price :" style="color:#ff9933;font-family: Times New Roman;"/>
-                      <p:inputText  value="#{bk.price}" />
+                   
                     <f:facet name="footer">   
-                        <h:commandButton value="Confirmed Book"  class="btn btn-danger" action="#{b.suc()}"  >    
+                        <h:commandButton value="Book"  class="btn btn-info" action="#{b.suc()}"  >    
                </h:commandButton> 
                    
                         
 
                     </f:facet>
                </p:panelGrid>
-      </h:form></center>
+                      </h:form>     
+           
+                 </center>
+        
     </h:body>
 </html>
 
